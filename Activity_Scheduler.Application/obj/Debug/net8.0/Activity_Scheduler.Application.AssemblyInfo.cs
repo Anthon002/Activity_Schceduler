@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Activity_Scheduler.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b877141551cbbcbfdcb469c2f3a9a5916ad64e20")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9addb2114a0fa46e797e6df7a25b30a4a75fd7fc")]
 [assembly: System.Reflection.AssemblyProductAttribute("Activity_Scheduler.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Activity_Scheduler.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

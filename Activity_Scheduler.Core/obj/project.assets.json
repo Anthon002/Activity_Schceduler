@@ -816,19 +816,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Chinedu\\.nuget\\packages\\": {}
+    "C:\\Users\\admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Chinedu\\Documents\\ALX\\Portfolio_Project\\Activity_Scheduler\\Activity_Scheduler.Core\\Activity_Scheduler.Core.csproj",
+      "projectUniqueName": "C:\\Users\\admin\\Documents\\Projects\\Dotnet\\ActivityScheduler\\Activity_Scheduler\\Activity_Scheduler.Core\\Activity_Scheduler.Core.csproj",
       "projectName": "Activity_Scheduler.Core",
-      "projectPath": "C:\\Users\\Chinedu\\Documents\\ALX\\Portfolio_Project\\Activity_Scheduler\\Activity_Scheduler.Core\\Activity_Scheduler.Core.csproj",
-      "packagesPath": "C:\\Users\\Chinedu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Chinedu\\Documents\\ALX\\Portfolio_Project\\Activity_Scheduler\\Activity_Scheduler.Core\\obj\\",
+      "projectPath": "C:\\Users\\admin\\Documents\\Projects\\Dotnet\\ActivityScheduler\\Activity_Scheduler\\Activity_Scheduler.Core\\Activity_Scheduler.Core.csproj",
+      "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\admin\\Documents\\Projects\\Dotnet\\ActivityScheduler\\Activity_Scheduler\\Activity_Scheduler.Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Chinedu\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -882,7 +882,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.301/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
