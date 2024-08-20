@@ -1,11 +1,8 @@
-@page
-@model Activity_Scheduler.MVC.Views.Authentication.Login
-@{
-    ViewData["Title"] = "Login";
-}
-
-<h1>@ViewData["Title"]</h1>
-
-<div>
-    
-</div>
+<form asp-action="Login" asp-controller="Authentication" method="post">
+    <input type="email" name="Email">
+    <input type="password" name="Password">
+    <input type="submit" value="login">
+</form>
+<a asp-action="Register" asp-controller="Authentication">
+Register
+</a>
