@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9dPEp8Ds9tY=",
+  "dgSpecHash": "sHmKaFP2Xyk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\admin\\Documents\\Projects\\Dotnet\\ActivityScheduler\\Activity_Scheduler\\Activity_Scheduler.Infrastructure\\Activity_Scheduler.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\admin\\Documents\\Projects\\Dotnet\\ActivityScheduler\\Activity_Scheduler.Infrastructure\\Activity_Scheduler.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\admin\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\admin\\Documents\\Projects\\Dotnet\\ActivityScheduler\\Activity_Scheduler\\Activity_Scheduler.Core\\Activity_Scheduler.Core.csproj": {}
+    "C:\\Users\\admin\\Documents\\Projects\\Dotnet\\ActivityScheduler\\Activity_Scheduler.Core\\Activity_Scheduler.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\admin\\Documents\\Projects\\Dotnet\\ActivityScheduler\\Activity_Scheduler\\Activity_Scheduler.Core\\Activity_Scheduler.Core.csproj": {
+    "C:\\Users\\admin\\Documents\\Projects\\Dotnet\\ActivityScheduler\\Activity_Scheduler.Core\\Activity_Scheduler.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\admin\\Documents\\Projects\\Dotnet\\ActivityScheduler\\Activity_Scheduler\\Activity_Scheduler.Core\\Activity_Scheduler.Core.csproj",
+        "projectUniqueName": "C:\\Users\\admin\\Documents\\Projects\\Dotnet\\ActivityScheduler\\Activity_Scheduler.Core\\Activity_Scheduler.Core.csproj",
         "projectName": "Activity_Scheduler.Core",
-        "projectPath": "C:\\Users\\admin\\Documents\\Projects\\Dotnet\\ActivityScheduler\\Activity_Scheduler\\Activity_Scheduler.Core\\Activity_Scheduler.Core.csproj",
+        "projectPath": "C:\\Users\\admin\\Documents\\Projects\\Dotnet\\ActivityScheduler\\Activity_Scheduler.Core\\Activity_Scheduler.Core.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\admin\\Documents\\Projects\\Dotnet\\ActivityScheduler\\Activity_Scheduler\\Activity_Scheduler.Core\\obj\\",
+        "outputPath": "C:\\Users\\admin\\Documents\\Projects\\Dotnet\\ActivityScheduler\\Activity_Scheduler.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config"

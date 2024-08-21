@@ -212,7 +212,10 @@
           "Microsoft.EntityFrameworkCore": "8.0.7"
         },
         "runtime": {
-          "Activity_Scheduler.Core.dll": {}
+          "Activity_Scheduler.Core.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
