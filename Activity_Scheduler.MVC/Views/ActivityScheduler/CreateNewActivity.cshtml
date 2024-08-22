@@ -1,0 +1,15 @@
+@model Activity_Scheduler.Core.ViewModels.ActivityViewModel;
+<form asp-action="CreateNewActivity" asp-controller="ActivityScheduler">
+    <label for="title"> Title</label>
+    <input asp-for="Title" id="title" type="text" placeholder="go to get groceries">
+    <br>
+    <label for="description"> Description </label>
+    <textarea asp-for="Description" id="title" type="text" placeholder="need to go to the grocery store down the street to get milk, carrots, cabbages..."></textarea>
+    <br>
+    <label for="enddate"> End Date</label>
+    <input asp-for="EndDate" id="enddate" type="datetime-local" required>
+    <span asp-validation-for="EndDate">
+
+    </span>
+    <input type="submit" value="create">
+</form>

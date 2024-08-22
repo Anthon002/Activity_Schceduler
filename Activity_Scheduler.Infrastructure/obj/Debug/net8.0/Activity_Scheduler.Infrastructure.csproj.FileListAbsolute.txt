@@ -51,6 +51,7 @@ C:\Users\admin\Documents\Projects\Dotnet\ActivityScheduler\Activity_Scheduler.In
 C:\Users\admin\Documents\Projects\Dotnet\ActivityScheduler\Activity_Scheduler.Infrastructure\obj\Debug\net8.0\Activity_Scheduler.Infrastructure.AssemblyInfoInputs.cache
 C:\Users\admin\Documents\Projects\Dotnet\ActivityScheduler\Activity_Scheduler.Infrastructure\obj\Debug\net8.0\Activity_Scheduler.Infrastructure.AssemblyInfo.cs
 C:\Users\admin\Documents\Projects\Dotnet\ActivityScheduler\Activity_Scheduler.Infrastructure\obj\Debug\net8.0\Activity_Scheduler.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\admin\Documents\Projects\Dotnet\ActivityScheduler\Activity_Scheduler.Infrastructure\obj\Debug\net8.0\Activity_Scheduler.Infrastructure.sourcelink.json
 C:\Users\admin\Documents\Projects\Dotnet\ActivityScheduler\Activity_Scheduler.Infrastructure\obj\Debug\net8.0\Activity.7419570B.Up2Date
 C:\Users\admin\Documents\Projects\Dotnet\ActivityScheduler\Activity_Scheduler.Infrastructure\obj\Debug\net8.0\Activity_Scheduler.Infrastructure.dll
 C:\Users\admin\Documents\Projects\Dotnet\ActivityScheduler\Activity_Scheduler.Infrastructure\obj\Debug\net8.0\refint\Activity_Scheduler.Infrastructure.dll

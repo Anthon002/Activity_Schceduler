@@ -11,6 +11,6 @@ namespace Activity_Scheduler.Core.DTO
         public string Title {get; set;}
         public string Description {get; set;}
         public string UserId{get;set;}
-        public int Duration{get; set;}
+        public double Duration{get; set;}
     }
 }

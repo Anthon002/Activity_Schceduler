@@ -8,10 +8,10 @@ namespace Activity_Scheduler.Core.ViewModels
 {
     public class ActivityViewModel
     {
-        public string Id {get;set;}
+        public string Id {get;set;} = "default id";
         public string Title {get;set;}
         public string Description{get;set;}
-        [Required]
+        [Required(ErrorMessage = "Missing EndDate")]
         [DataType(DataType.DateTime)]
         public DateTime EndDate{get;set;}
 

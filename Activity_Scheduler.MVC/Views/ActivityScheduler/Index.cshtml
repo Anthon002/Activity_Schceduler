@@ -1,6 +1,6 @@
 @model List<Activity_Scheduler.Core.ViewModels.ActivityViewModel>
 
-<a asp-action="CreateNewActivity" asp-controller="">
+<a asp-action="CreateNewActivity" asp-controller="ActivityScheduler">
     <button> Create New Activity </button>
 </a>
 
@@ -9,10 +9,9 @@
         <table id="activityTable">
             <thead>
                 <tr>
-                    <th>id</th>
                     <th>title</th>
                     <th>description</th>
-                    <th>endDate</th>
+                    <th>endDate(utc)</th>
                 </tr>
             </thead>
             <tbody>
@@ -31,39 +30,32 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
-    $('#activityTable').DataTable({
-        "processing": true,
-        "serverSide": true,
-        "ajax": {
-            "url": "@Url.Action("GetActivities", "ActivityScheduler")", 
-            "type": "GET",
-            "dataSrc": function(json){
-                console.log(json);
-                return json.data;
-            }
-        },
-        "columns": [
-            @* { "data": null }, *@
-            {"data": "id"},          
-            { "data": "title" },
-            { "data": "description" },
-            { "data": "endDate" }
-        ],
-        @* "columnDefs": [
-            {
-                "targets": 0,
-                "render": function (data, type, row, meta) {
-                    return meta.row + 1;
-                }
-            }
-        ], *@
-        "paging": true,
-        "searching": true
-    });
+    var baseurl = window.location.origin;
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", baseurl + "/ActivityScheduler/GetActivities", true);
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            var persons = JSON.parse(xmlhttp.responseText);
+            $("#activityTable").DataTable({
+                data: persons,
+                columns: [
+                    { "data": "title" },
+                    { "data": "description" },
+                    { "data": "endDate" },
+                    {"data":"id",
+                     "render": function(data,type,row){
+                        return `<a href = ${baseurl}/ActivityScheduler/Details/${data}> Details </a>`
+                    }
+                    },
+                    {"data":"id", 
+                     "render": function(data, type, row){
+                        return `<a href = ${baseurl}/ActivityScheduler/Delete/${data}> Delete </a>`
+                     }
+                     }
+                ],
+            });
+        }
+    };
+    xmlhttp.send();
 });
- 
-<<<<<<< HEAD
-</script>
-=======
-</script>
->>>>>>> cbba764027c8e8d03ce67d0250cbe150ad427492
+ </script>

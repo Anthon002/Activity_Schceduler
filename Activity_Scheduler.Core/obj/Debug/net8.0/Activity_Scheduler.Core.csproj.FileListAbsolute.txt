@@ -32,6 +32,7 @@ C:\Users\admin\Documents\Projects\Dotnet\ActivityScheduler\Activity_Scheduler.Co
 C:\Users\admin\Documents\Projects\Dotnet\ActivityScheduler\Activity_Scheduler.Core\obj\Debug\net8.0\Activity_Scheduler.Core.AssemblyInfoInputs.cache
 C:\Users\admin\Documents\Projects\Dotnet\ActivityScheduler\Activity_Scheduler.Core\obj\Debug\net8.0\Activity_Scheduler.Core.AssemblyInfo.cs
 C:\Users\admin\Documents\Projects\Dotnet\ActivityScheduler\Activity_Scheduler.Core\obj\Debug\net8.0\Activity_Scheduler.Core.csproj.CoreCompileInputs.cache
+C:\Users\admin\Documents\Projects\Dotnet\ActivityScheduler\Activity_Scheduler.Core\obj\Debug\net8.0\Activity_Scheduler.Core.sourcelink.json
 C:\Users\admin\Documents\Projects\Dotnet\ActivityScheduler\Activity_Scheduler.Core\obj\Debug\net8.0\Activity_Scheduler.Core.dll
 C:\Users\admin\Documents\Projects\Dotnet\ActivityScheduler\Activity_Scheduler.Core\obj\Debug\net8.0\refint\Activity_Scheduler.Core.dll
 C:\Users\admin\Documents\Projects\Dotnet\ActivityScheduler\Activity_Scheduler.Core\obj\Debug\net8.0\Activity_Scheduler.Core.pdb

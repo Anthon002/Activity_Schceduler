@@ -50,6 +50,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Authentication}/{action=Register}/{id?}");
+    pattern: "{controller=ActivityScheduler}/{action=Index}/{id?}");
 
 app.Run();

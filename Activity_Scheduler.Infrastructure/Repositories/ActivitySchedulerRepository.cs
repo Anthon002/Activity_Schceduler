@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Activity_Scheduler.Application.IRepositories;
+using Activity_Scheduler.Core.DTO;
 using Activity_Scheduler.Core.Models;
 using Activity_Scheduler.Core.ViewModels;
 using Activity_Scheduler.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace Activity_Scheduler.Infrastructure.Repositories
 {
@@ -30,6 +32,22 @@ namespace Activity_Scheduler.Infrastructure.Repositories
                     return null;
                 }
                 return activities;
+        }
+        public async Task<string> CreateActivity(Activity activity)
+        {
+            var response = await _dbContext.ActivityTable.AddAsync(activity);
+            await _dbContext.SaveChangesAsync();
+            return (response.ToString());
+        }
+        public async Task<Activity> GetActivity(string Id)
+        {
+            Activity activity= await _dbContext.ActivityTable.FirstOrDefaultAsync(x => x.Id == Id);
+            if (activity == null)
+            {
+             Activity _error = new Activity(){Description = "activity not found"};
+             return _error;   
+            }
+            return activity;
         }
     }
 }
