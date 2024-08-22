@@ -1,2 +1,9 @@
-@model @model Activity_Scheduler.Core.DTO.ActivityDTO;
-<a asp-action=""></a>
+@model Activity_Scheduler.Core.DTO.ActivityDTO;
+Are You Sure You Want To Delete This Activity?
+<form asp-action="DeleteActivity" asp-controller="ActivityScheduler" method="post">
+    <input name="Id" value="@Model.Id" type="hidden">
+    <input type="submit" value="Yes">
+</form>
+
+<a asp-action="Index" asp-controller="ActivityScheduler"><button>No</button></a>
+<div> @ViewData["ErrorMessage"]</div>

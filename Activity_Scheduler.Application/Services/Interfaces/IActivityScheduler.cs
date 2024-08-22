@@ -12,5 +12,6 @@ namespace Activity_Scheduler.Application.Services.Interfaces
         Task<List<ActivityViewModel>> GetActivites(string UserId);
         Task<string> CreateActivity(ActivityViewModel newActivity, System.Security.Claims.ClaimsPrincipal user);
         Task<ActivityDTO> GetActivity(string Id);
+        Task<string> DeleteActivity(string Id);
     }
 }

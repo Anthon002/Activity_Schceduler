@@ -99,8 +99,14 @@ namespace Activity_Scheduler.MVC.Controllers
                 ViewData["ErrorMessage"] = "Invalid activity";
                 return View();
             }
-            ActivityDTO activity = await _activityScheduler.GetActivity(Id);
+           ActivityDTO activity = await _activityScheduler.GetActivity(Id);
             return View(activity);
+        }
+        [HttpPost]
+        public async Task<ActionResult> DeleteActivity(string Id)
+        {
+            var respone = await _activityScheduler.DeleteActivity(Id);
+            return RedirectToAction("Index");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

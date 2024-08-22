@@ -49,5 +49,17 @@ namespace Activity_Scheduler.Infrastructure.Repositories
             }
             return activity;
         }
+        public async Task<string> DeleteActivity(string Id)
+        {
+            Activity activity= await _dbContext.ActivityTable.FirstOrDefaultAsync(x => x.Id == Id);
+            _dbContext.ActivityTable.Remove(activity);
+            var response = await _dbContext.SaveChangesAsync();
+            if (response == null)
+            {
+                return null;
+            }
+            return response.ToString();
+            
+        }
     }
 }

@@ -13,5 +13,6 @@ namespace Activity_Scheduler.Application.IRepositories
         Task<List<ActivityViewModel>> GetActivities(string UserId);
         Task<string> CreateActivity(Activity activity);
         Task<Activity> GetActivity(string Id);
+        Task<string> DeleteActivity(string Id);
     }
 }

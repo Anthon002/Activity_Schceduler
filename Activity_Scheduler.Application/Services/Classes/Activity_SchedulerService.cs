@@ -56,5 +56,9 @@ namespace Activity_Scheduler.Application.Services.Classes
             };
             return activityDTO;
         }
+        public Task<string> DeleteActivity(string Id)
+        {
+            return _activitySchedulerRepository.DeleteActivity(Id);
+        }
     }
 }
