@@ -3,6 +3,9 @@
 <a asp-action="CreateNewActivity" asp-controller="ActivityScheduler">
     <button> Create New Activity </button>
 </a>
+<form asp-action="Logout" asp-controller="Authentication" method="post">
+    <input type="submit" value="logout">
+</form>
 
 @{
     int counter = 1;

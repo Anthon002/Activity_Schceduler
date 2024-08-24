@@ -1,0 +1,25 @@
+<a id="resend" asp-action="Emailconfirmation" asp-controller="Authentication" >
+Redirect to resend
+</a>
+<div id="msgDiv">
+
+</div>
+<script>
+    window.onload = function(){
+        var btn = document.getElementById("resend");
+        var msgDiv = document.getElementById("msgDiv");
+        let timer;
+        let countdown = 30;
+        btn.style.display = "none";
+        timer = setInterval(()=>{
+            countdown--;
+            msgDiv.innerHTML = "Resend in " + " " + countdown;
+            if (countdown <= 0)
+            {
+                countdown = 0;
+                btn.style.display = "block";
+                clearInterval(timer)
+            }
+        },1000)
+    }
+</script>

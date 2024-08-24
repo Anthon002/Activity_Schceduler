@@ -45,6 +45,9 @@ namespace Activity_Scheduler.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("reminderTime")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.ToTable("ActivityTable");

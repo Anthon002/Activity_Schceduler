@@ -35,9 +35,14 @@ namespace Activity_Scheduler.Infrastructure.Repositories
         }
         public async Task<string> CreateActivity(Activity activity)
         {
-            var response = await _dbContext.ActivityTable.AddAsync(activity);
-            await _dbContext.SaveChangesAsync();
-            return (response.ToString());
+            await _dbContext.ActivityTable.AddAsync(activity);
+            int response = await _dbContext.SaveChangesAsync();
+            if (response > 0)
+            {
+                return "true";
+            }
+
+            return ("false");
         }
         public async Task<Activity> GetActivity(string Id)
         {

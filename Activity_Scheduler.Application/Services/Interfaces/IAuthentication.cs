@@ -11,5 +11,7 @@ namespace Activity_Scheduler.Application.Services.Interfaces
     {
         Task<ApplicationUser> CheckUser(string email, string password = "password");
         Task<ApplicationUser> Register(ApplicationUserViewModel User);
+        Task<bool> ConfirmEmail(ApplicationUser user, string emailContent);
+        Task<string> UpdateConfirmationStatus(string userId);
     }
 }

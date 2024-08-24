@@ -13,6 +13,7 @@ namespace Activity_Scheduler.Core.Models
         public string Description {get; set;}
         public DateTime StartDate {get;set;}
         public DateTime EndDate{get;set;}
+        public int reminderTime{get; set;}
         public string UserId{get;set;}
     }
 }

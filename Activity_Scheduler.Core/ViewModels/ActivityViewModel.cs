@@ -14,6 +14,6 @@ namespace Activity_Scheduler.Core.ViewModels
         [Required(ErrorMessage = "Missing EndDate")]
         [DataType(DataType.DateTime)]
         public DateTime EndDate{get;set;}
-
+        public int reminderTime {get; set;}
     }
 }
