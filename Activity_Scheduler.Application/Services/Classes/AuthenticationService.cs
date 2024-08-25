@@ -44,7 +44,7 @@ namespace Activity_Scheduler.Application.Services.Classes
        }
        public async Task<bool> ConfirmEmail(ApplicationUser user, string emailContent)
        {
-            Configuration.Default.ApiKey["api-key"] = "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";
+            Configuration.Default.ApiKey["api-key"] = "api key";
 
             var apiInstance = new TransactionalEmailsApi();
             string SenderName = "Chinedu Anulugwo";
