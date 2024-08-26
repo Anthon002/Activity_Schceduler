@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Activity_Scheduler.Core.Models
 {
-    public class Activity
+    public class CompletedActivity
     {
         public string Id {get ; set; }
         public string Title {get; set;}

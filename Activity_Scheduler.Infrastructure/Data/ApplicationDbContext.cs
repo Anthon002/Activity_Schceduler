@@ -11,6 +11,8 @@ namespace Activity_Scheduler.Infrastructure.Data
     public class ApplicationDbContext:IdentityDbContext<ApplicationUser>
     {
         public DbSet<Activity> ActivityTable {get;set;}
+        public DbSet<CompletedActivity> CompletedActivityTable {get; set;}
+        public DbSet<ExpiredActivity> ExpiredActivityTable{get;set;}
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
 

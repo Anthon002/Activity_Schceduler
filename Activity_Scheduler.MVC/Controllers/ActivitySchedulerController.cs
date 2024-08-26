@@ -109,6 +109,45 @@ namespace Activity_Scheduler.MVC.Controllers
             var respone = await _activityScheduler.DeleteActivity(Id);
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public async Task<ActionResult> CompleteActivity(string Id)
+        {
+            var response = await _activityScheduler.CompleteActivity(Id);
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public async Task<ActionResult> CompletedActivities()
+        {
+            List<ActivityViewModel> activities =await _activityScheduler.GetCompletedActivities();
+            return Json(activities);
+        }
+        [HttpGet]
+        public async Task<ActionResult> CompletedActivitiesPage()
+        {
+            return View();
+        }
+        public async Task<ActionResult> ExpiredActivities()
+        {
+            List<ActivityViewModel> activities = await _activityScheduler.GetExpiredActivities();
+            return Json(activities);
+        }
+        [HttpGet]
+        public async Task<ActionResult> DeleteExpiredActivities(string Id)
+        {
+            await _activityScheduler.DeleteExpiredActivity(Id);
+            return RedirectToAction("ExpiredActivitiesPage");
+        }
+        [HttpGet]
+        public async Task<ActionResult> ExpiredActivitiesPage()
+        {
+            return View();
+        }
+        [HttpGet]
+        public async Task<ActionResult> DeleteCompletedActivities(string Id)
+        {
+            await _activityScheduler.DeleteCompletedActivity(Id);
+            return RedirectToAction("CompletedActivitiesPage");
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

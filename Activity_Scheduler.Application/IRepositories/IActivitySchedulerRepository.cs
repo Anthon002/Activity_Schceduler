@@ -14,5 +14,11 @@ namespace Activity_Scheduler.Application.IRepositories
         Task<string> CreateActivity(Activity activity);
         Task<Activity> GetActivity(string Id);
         Task<string> DeleteActivity(string Id);
+        Task<string> CompleteActivity(string Id);
+        Task<List<ActivityViewModel>> GetCompletedActivities();
+        Task<List<ActivityViewModel>> GetExpiredActivities();
+        Task<string> RemoveExpiredActivity(string Id);
+        Task<string> DeleteExpiredActivity(string Id);
+        Task<string> DeleteCompletedActivity(string Id);
     }
 }

@@ -48,13 +48,21 @@ namespace Activity_Scheduler.Application.Services.Classes
                 //DateTime endDate = activity.EndDate;
                 var _dateTime = activity.EndDate.AddMinutes(-(activity.reminderTime));
                 var dateTimeOffSet = new DateTimeOffset(_dateTime);
-                var emailResponse = SendReminderEmail(_user,activity,dateTimeOffSet);
+                var endDateTimeOffSet = new DateTimeOffset(activity.EndDate);
+                var emailResponse = SendReminderEmail(_user,activity,dateTimeOffSet, endDateTimeOffSet);
              }
              return response;
         }
-        public async Task<string> SendReminderEmail(ApplicationUser user,Activity activity, DateTimeOffset sendDate)
+        public async Task<string> SendReminderEmail(ApplicationUser user,Activity activity, DateTimeOffset sendDate, DateTimeOffset endDateTime)
         {
             BackgroundJob.Schedule(()=> ReminderEmail(user,activity),sendDate);
+            BackgroundJob.Schedule(()=> AutoRemoveExpiredActivity(activity),endDateTime);
+            return null;
+        }
+        public async Task<string> AutoRemoveExpiredActivity(Activity activity)
+        {
+            await _activitySchedulerRepository.RemoveExpiredActivity(activity.Id);
+
             return null;
         }
         public bool ReminderEmail(ApplicationUser user, Activity activity)
@@ -105,9 +113,33 @@ namespace Activity_Scheduler.Application.Services.Classes
             };
             return activityDTO;
         }
-        public Task<string> DeleteActivity(string Id)
+        public async Task<string> DeleteActivity(string Id)
         {
-            return _activitySchedulerRepository.DeleteActivity(Id);
+            return await _activitySchedulerRepository.DeleteActivity(Id);
+        }
+        public async Task<string> CompleteActivity(string Id)
+        {
+            return await _activitySchedulerRepository.CompleteActivity(Id);
+        }
+
+        public async Task<List<ActivityViewModel>> GetCompletedActivities()
+        {
+            return await _activitySchedulerRepository.GetCompletedActivities();
+        }
+
+        public async Task<List<ActivityViewModel>> GetExpiredActivities()
+        {
+            return await _activitySchedulerRepository.GetExpiredActivities();
+        }
+
+        public async Task<string> DeleteExpiredActivity(string Id)
+        {
+            return await _activitySchedulerRepository.DeleteExpiredActivity(Id);
+        }
+
+        public async Task<string> DeleteCompletedActivity(string Id)
+        {
+            return await _activitySchedulerRepository.DeleteCompletedActivity(Id);
         }
     }
 }

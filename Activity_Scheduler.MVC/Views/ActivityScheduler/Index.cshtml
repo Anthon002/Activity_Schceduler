@@ -3,11 +3,12 @@
 <a asp-action="CreateNewActivity" asp-controller="ActivityScheduler">
     <button> Create New Activity </button>
 </a>
+<a asp-action="CompletedActivitiesPage" asp-controller="ActivityScheduler"> Completed Activities</a>
+<a asp-action="ExpiredActivitiesPage" asp-controller="ActivityScheduler"> Expired Activities</a>
 <form asp-action="Logout" asp-controller="Authentication" method="post">
     <input type="submit" value="logout">
 </form>
 
-@{
     int counter = 1;
         <table id="activityTable">
             <thead>
@@ -18,20 +19,12 @@
                 </tr>
             </thead>
             <tbody>
-                @* @foreach (var item in Model)
-                {
-                   <tr>
-                    <td>@counter</td>
-                    <td><a asp-route-id="@item.Id" asp-action="Activity" asp-controller="ActivityScheduler">@item.Title</a></td>
-                    <td>@item.EndDate</td>
-                    <td><a asp-route-id="@item.Id" asp-action="DeleteActivity" asp-controller="ActivityScheduler">Delete</a></td>
-                   </tr> 
-                } *@
             </tbody>
         </table>
-}
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
+
 $(document).ready(function() {
     var baseurl = window.location.origin;
     var xmlhttp = new XMLHttpRequest();
@@ -45,20 +38,29 @@ $(document).ready(function() {
                     { "data": "title" },
                     { "data": "description" },
                     { "data": "endDate" },
-                    {"data":"id",
-                     "render": function(data,type,row){
-                        return `<a href = ${baseurl}/ActivityScheduler/Details/${data}> Details </a>`
-                    }
+                    {
+                        "data": "id",
+                        "render": function(data, type, row) {
+                            return `<a href="${baseurl}/ActivityScheduler/Details/${data}"> Details </a>`;
+                        }
                     },
-                    {"data":"id", 
-                     "render": function(data, type, row){
-                        return `<a href = ${baseurl}/ActivityScheduler/Delete/${data}> Delete </a>`
-                     }
-                     }
+                    {
+                        "data": "id",
+                        "render": function(data, type, row) {
+                            return `<a href="${baseurl}/ActivityScheduler/Delete/${data}"> Delete </a>`;
+                        }
+                    },
+                    {
+                        "data": "id",
+                        "render": function(data, type, row) {
+                            return `<a href="${baseurl}/ActivityScheduler/CompleteActivity/${data}"> Completed </a>`;
+                        }
+                    }
                 ],
             });
         }
     };
     xmlhttp.send();
 });
+
  </script>

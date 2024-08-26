@@ -7,9 +7,14 @@
     <textarea asp-for="Description" id="title" type="text" placeholder="need to go to the grocery store down the street to get milk, carrots, cabbages..."></textarea>
     <br>
     <label for="enddate"> End Date</label>
-    <input asp-for="EndDate" id="enddate" type="datetime-local" required>
+    <input asp-for="EndDate" id="enddate" type="datetime-local" required min="">
     <span asp-validation-for="EndDate">
 
     </span>
     <input type="submit" value="create">
 </form>
+
+<script>
+    var now = new Date().toISOString().slice(0, 16);
+    document.getElementById("enddate").min = now;
+</script>

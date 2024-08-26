@@ -1,0 +1,44 @@
+<table id="CompletedActivities">
+    <thead>
+        <tr>
+            <th>title</th>
+            <th>description</th>
+            <th>endDate(utc)</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+
+    </tbody>
+</table>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function () {
+    var baseurl = window.location.origin;
+    var xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.open("GET", baseurl + "/ActivityScheduler/ExpiredActivities", true);
+    
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+            var _data = JSON.parse(xmlhttp.responseText);
+            $("#CompletedActivities").DataTable({
+                data: _data,
+                columns: [
+                    { "data": "title" },
+                    { "data": "description" },
+                    { "data": "endDate" },
+                    {
+                        "data": "id",
+                        "render": function (data, type, row) {
+                            return `<a href="${baseurl}/ActivityScheduler/DeleteExpiredActivities/${data}">Delete</a>`;
+                        }
+                    }
+                ],
+            });
+        }
+    };
+
+    xmlhttp.send();
+});
+
+</script>

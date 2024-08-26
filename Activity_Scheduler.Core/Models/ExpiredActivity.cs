@@ -1,12 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Activity_Scheduler.Core.Models
 {
-    public class Activity
+    public class ExpiredActivity
     {
         public string Id {get ; set; }
         public string Title {get; set;}
@@ -16,5 +11,5 @@ namespace Activity_Scheduler.Core.Models
         public int reminderTime{get; set;}
         public string UserId{get;set;}
         public string Status {get; set;} = "Active";
-    }
+    } 
 }
