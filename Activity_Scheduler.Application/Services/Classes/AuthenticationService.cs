@@ -79,6 +79,15 @@ namespace Activity_Scheduler.Application.Services.Classes
         await _userManager.UpdateAsync(user);
         return "done";
        }
+       public async Task<bool> IsUserConfirmed(string userId)
+       {
+        ApplicationUser user = await _userManager.FindByIdAsync(userId);
+        if (user == null)
+        {
+            return false;
+        }
+        return user.EmailConfirmed;
+       }
 
     }
 }

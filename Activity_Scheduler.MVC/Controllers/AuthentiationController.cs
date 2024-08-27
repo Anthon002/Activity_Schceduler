@@ -121,7 +121,7 @@ namespace Activity_Scheduler.MVC.Controllers
                 return RedirectToAction("Emailconfirmation", new{errorMessage = "Confirmation Token does not match"});
             }
             await _authentication.UpdateConfirmationStatus(userId);
-            return RedirectToAction("Index", "Activity_Scheduler");
+            return RedirectToAction("Index", "ActivityScheduler");
         }
         [HttpGet]
         public async Task<ActionResult> WaitForResend()

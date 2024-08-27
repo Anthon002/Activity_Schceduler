@@ -20,19 +20,27 @@ namespace Activity_Scheduler.MVC.Controllers
         private readonly ILogger<ActivitySchedulerController> _logger;
         private readonly IActivityScheduler _activityScheduler;
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly IAuthentication _authentication;
 
-        public ActivitySchedulerController(ILogger<ActivitySchedulerController> logger, IActivityScheduler activityScheduler, UserManager<ApplicationUser> userManager)
+        public ActivitySchedulerController(ILogger<ActivitySchedulerController> logger, IActivityScheduler activityScheduler, UserManager<ApplicationUser> userManager, IAuthentication authentication)
         {
             _logger = logger;
             _activityScheduler = activityScheduler;
             _userManager = userManager;
+            _authentication = authentication;
         }
+
         [HttpGet]
         public async Task<ActionResult> GetActivities()
         {
             if (!User.Identity.IsAuthenticated)
             {
                 return RedirectToAction("Login","Authentication");
+            }
+ 
+             if (!await _authentication.IsUserConfirmed(_userManager.GetUserId(User)))
+            {
+                return RedirectToAction("Emailconfirmation","Authentication");
             }
             var userId = _userManager.GetUserId(User).ToString();
             if (userId == null)
@@ -49,16 +57,37 @@ namespace Activity_Scheduler.MVC.Controllers
             {
                 return RedirectToAction("Login","Authentication");
             }
+ 
+             if (!await _authentication.IsUserConfirmed(_userManager.GetUserId(User)))
+            {
+                return RedirectToAction("Emailconfirmation","Authentication");
+            }
             return View();
         }
         [HttpGet]
         public async Task<ActionResult> CreateNewActivity()
         {
+                        if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Login","Authentication");
+            }
+                        if (!await _authentication.IsUserConfirmed(_userManager.GetUserId(User)))
+            {
+                return RedirectToAction("Emailconfirmation","Authentication");
+            }
             return View();
         }
         [HttpPost]
         public async Task<ActionResult> CreateNewActivity(ActivityViewModel newActivity)
         {
+                        if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Login","Authentication");
+            }
+                        if (!await _authentication.IsUserConfirmed(_userManager.GetUserId(User)))
+            {
+                return RedirectToAction("Emailconfirmation","Authentication");
+            }
             if (newActivity == null)
             {
                 return View();
@@ -77,6 +106,14 @@ namespace Activity_Scheduler.MVC.Controllers
         [HttpGet]
         public async Task<ActionResult> Details(string Id)
         {
+                        if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Login","Authentication");
+            }
+                        if (!await _authentication.IsUserConfirmed(_userManager.GetUserId(User)))
+            {
+                return RedirectToAction("Emailconfirmation","Authentication");
+            }
             ViewData["ErrorMessage"] = "";
             if (Id == null)
             {
@@ -94,6 +131,14 @@ namespace Activity_Scheduler.MVC.Controllers
         [HttpGet]
         public async Task<ActionResult> Delete(string Id)
         {
+                        if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Login","Authentication");
+            }
+                        if (!await _authentication.IsUserConfirmed(_userManager.GetUserId(User)))
+            {
+                return RedirectToAction("Emailconfirmation","Authentication");
+            }
             ViewData["ErrorMessage"] ="";
             if (Id == null)
             {
@@ -106,45 +151,109 @@ namespace Activity_Scheduler.MVC.Controllers
         [HttpPost]
         public async Task<ActionResult> DeleteActivity(string Id)
         {
+                        if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Login","Authentication");
+            }
+                        if (!await _authentication.IsUserConfirmed(_userManager.GetUserId(User)))
+            {
+                return RedirectToAction("Emailconfirmation","Authentication");
+            }
             var respone = await _activityScheduler.DeleteActivity(Id);
             return RedirectToAction("Index");
         }
         [HttpGet]
         public async Task<ActionResult> CompleteActivity(string Id)
         {
+                        if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Login","Authentication");
+            }
+                        if (!await _authentication.IsUserConfirmed(_userManager.GetUserId(User)))
+            {
+                return RedirectToAction("Emailconfirmation","Authentication");
+            }
             var response = await _activityScheduler.CompleteActivity(Id);
             return RedirectToAction("Index");
         }
         [HttpGet]
         public async Task<ActionResult> CompletedActivities()
         {
+                        if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Login","Authentication");
+            }
+                        if (!await _authentication.IsUserConfirmed(_userManager.GetUserId(User)))
+            {
+                return RedirectToAction("Emailconfirmation","Authentication");
+            }
             List<ActivityViewModel> activities =await _activityScheduler.GetCompletedActivities();
             return Json(activities);
         }
         [HttpGet]
         public async Task<ActionResult> CompletedActivitiesPage()
         {
+                        if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Login","Authentication");
+            }
+                        if (!await _authentication.IsUserConfirmed(_userManager.GetUserId(User)))
+            {
+                return RedirectToAction("Emailconfirmation","Authentication");
+            }
             return View();
         }
         public async Task<ActionResult> ExpiredActivities()
         {
+                        if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Login","Authentication");
+            }
+                        if (!await _authentication.IsUserConfirmed(_userManager.GetUserId(User)))
+            {
+                return RedirectToAction("Emailconfirmation","Authentication");
+            }
             List<ActivityViewModel> activities = await _activityScheduler.GetExpiredActivities();
             return Json(activities);
         }
         [HttpGet]
         public async Task<ActionResult> DeleteExpiredActivities(string Id)
         {
+                        if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Login","Authentication");
+            }
+                        if (!await _authentication.IsUserConfirmed(_userManager.GetUserId(User)))
+            {
+                return RedirectToAction("Emailconfirmation","Authentication");
+            }
             await _activityScheduler.DeleteExpiredActivity(Id);
             return RedirectToAction("ExpiredActivitiesPage");
         }
         [HttpGet]
         public async Task<ActionResult> ExpiredActivitiesPage()
         {
+                        if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Login","Authentication");
+            }
+                        if (!await _authentication.IsUserConfirmed(_userManager.GetUserId(User)))
+            {
+                return RedirectToAction("Emailconfirmation","Authentication");
+            }
             return View();
         }
         [HttpGet]
         public async Task<ActionResult> DeleteCompletedActivities(string Id)
         {
+                        if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Login","Authentication");
+            }
+                        if (!await _authentication.IsUserConfirmed(_userManager.GetUserId(User)))
+            {
+                return RedirectToAction("Emailconfirmation","Authentication");
+            }
             await _activityScheduler.DeleteCompletedActivity(Id);
             return RedirectToAction("CompletedActivitiesPage");
         }
